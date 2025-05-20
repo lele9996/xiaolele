@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我们的家乡</title>
+    <meta name="keywords" content="山东城市, 家乡介绍, 城市风貌">
+    <meta name="description" content="探索山东各地的城市风貌和文化特色">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    
+    <!-- 配置Tailwind自定义主题 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2b2b2b',
+                        secondary: '#4a4a4a',
+                        accent: '#666666',
+                        light: '#f5f5f5',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .nav-item-hover {
+                @apply transition-all duration-300 hover:text-primary hover:bg-light/20;
+            }
+            .banner-title {
+                @apply text-[clamp(2.5rem,5vw,5rem)] font-bold text-primary;
+            }
+            .animate-fade-in {
+                animation: fadeIn 1s ease-in-out;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-light">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <h1 class="text-2xl font-bold text-primary cursor-pointer">
+                    <a href="/">我们的家乡</a>
+                </h1>
+            </div>
+            
+            <!-- 桌面导航 -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="#" class="text-primary font-medium nav-item-hover px-3 py-2 rounded">首页</a>
+                <a href="#jining" class="text-secondary font-medium nav-item-hover px-3 py-2 rounded">济宁</a>
+                <a href="#juancheng" class="text-secondary font-medium nav-item-hover px-3 py-2 rounded">鄄城</a>
+                <a href="#linyi" class="text-secondary font-medium nav-item-hover px-3 py-2 rounded">临沂</a>
+                <a href="#jinan" class="text-secondary font-medium nav-item-hover px-3 py-2 rounded">济南</a>
+            </nav>
+            
+            <!-- 移动端菜单按钮 -->
+            <button id="menu-toggle" class="md:hidden text-primary text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- 移动端导航菜单 -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#" class="text-primary font-medium nav-item-hover px-3 py-2 rounded">首页</a>
+                <a href="#jining" class="text-secondary font-medium nav-item-hover px-3 py-2 rounded">济宁</a>
+                <a href="#juancheng" class="text-secondary font-medium nav-item-hover px-3 py-2 rounded">鄄城</a>
+                <a href="#linyi" class="text-secondary font-medium nav-item-hover px-3 py-2 rounded">临沂</a>
+                <a href="#jinan" class="text-secondary font-medium nav-item-hover px-3 py-2 rounded">济南</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主Banner -->
+    <section class="relative h-[80vh] min-h-[500px] overflow-hidden">
+        <div id="banner-carousel" class="h-full">
+            <!-- 轮播图1 -->
+            <div class="banner-slide absolute inset-0 opacity-100 transition-opacity duration-1000 ease-in-out">
+                <img src="微信图片_20250518183010.jpg" alt="山东风光" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/20"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="text-center px-4">
+                        <h2 class="banner-title animate-fade-in">我们的家乡</h2>
+                        <p class="text-white text-xl mt-4 max-w-2xl mx-auto">探索山东各地的城市风貌和文化特色</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 轮播图2 -->
+            <div class="banner-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+                <img src="微信图片_20250518180035.jpg" alt="山东城市" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/20"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="text-center px-4">
+                        <h2 class="banner-title animate-fade-in">魅力山东</h2>
+                        <p class="text-white text-xl mt-4 max-w-2xl mx-auto">感受千年文化与现代城市的完美融合</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 轮播控制按钮 -->
+            <button id="prev-slide" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button id="next-slide" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            
+            <!-- 轮播指示器 -->
+            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2">
+                <button class="w-3 h-3 rounded-full bg-white/70 hover:bg-white transition-all" data-index="0"></button>
+                <button class="w-3 h-3 rounded-full bg-white/40 hover:bg-white transition-all" data-index="1"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要内容区域 -->
+    <main class="container mx-auto px-4 py-16">
+        <section id="jining" class="mb-20">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center">济宁</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="微信图片_20250518185153.jpg" alt="济宁风光" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+                <div>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        济宁市位于山东省西南部，是著名的历史文化名城，孔子、孟子的故乡。这里有着悠久的历史和灿烂的文化，是中华文明的重要发祥地之一。
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mt-4">
+                        济宁拥有众多历史遗迹和旅游景点，如孔庙、孔府、孔林、孟庙、水泊梁山等，吸引着来自世界各地的游客。
+                    </p>
+                    <a href="jining.html" class="inline-block mt-6 px-6 py-3 bg-primary text-white rounded-md hover:bg-primary/90 transition-all">
+                        了解更多 <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="juancheng" class="mb-20">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center">鄄城</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="md:order-2">
+                    <img src="微信图片_20250518183755.png" alt="鄄城风光" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+                <div class="md:order-1">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        鄄城县隶属于山东省菏泽市，是中华民族发祥地之一，素有"古鄄"之称。这里历史悠久，文化底蕴深厚，是孙膑故里和古代军事家孙膑的诞生地。
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mt-4">
+                        鄄城拥有丰富的自然景观和人文景观，如孙膑旅游城、尧王墓、庄子庙等，展示了鄄城的历史变迁和文化传承。
+                    </p>
+                    <a href="heze.html" class="inline-block mt-6 px-6 py-3 bg-primary text-white rounded-md hover:bg-primary/90 transition-all">
+                        了解更多 <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="linyi" class="mb-20">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center">临沂</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="微信图片_20250518180035.jpg" alt="临沂风光" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+                <div>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        临沂市位于山东省东南部，是山东省面积最大、人口最多的地级市。临沂有着悠久的历史和灿烂的文化，是著名的革命老区和商贸物流之都。
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mt-4">
+                        临沂自然风光秀丽，有蒙山、沂水等自然景观，也有王羲之故居、银雀山汉墓竹简博物馆等人文景观，是旅游观光的好去处。
+                    </p>
+                    <a href="linyi.html" class="inline-block mt-6 px-6 py-3 bg-primary text-white rounded-md hover:bg-primary/90 transition-all">
+                        了解更多 <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="jinan" class="mb-20">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center">济南</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="md:order-2">
+                    <img src="微信图片_20250518184359.jpg" alt="济南风光" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+                <div class="md:order-1">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        济南市是山东省省会，位于山东省中西部，是全省的政治、经济、文化、科技和教育中心。济南因境内泉水众多，拥有"七十二名泉"，被称为"泉城"。
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mt-4">
+                        济南有着丰富的旅游资源，如趵突泉、大明湖、千佛山等，是国家历史文化名城和优秀旅游城市。
+                    </p>
+                    <a href="jinan.html" class="inline-block mt-6 px-6 py-3 bg-primary text-white rounded-md hover:bg-primary/90 transition-all">
+                        了解更多 <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-primary text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <p class="text-lg mb-4">我们的家乡</p>
+                
+                <div class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-4 text-sm">
+                    <a href="https://www.gov.cn/" class="hover:text-gray-300 transition-all">关于我们</a>
+                    <span>|</span>
+                    <a href="https://www.cpd.com.cn/" class="hover:text-gray-300 transition-all">联系方式</a>
+                    <span>|</span>
+                    <a href="https://www.chinacourt.org/index.shtml" class="hover:text-gray-300 transition-all">隐私政策</a>
+                </div>
+                <p class="mt-6 text-sm text-gray-400">最终解释权归网站所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-primary/80 hover:bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all transform translate-y-20 opacity-0">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单切换
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 轮播图功能
+        const slides = document.querySelectorAll('.banner-slide');
+        const indicators = document.querySelectorAll('[data-index]');
+        const prevBtn = document.getElementById('prev-slide');
+        const nextBtn = document.getElementById('next-slide');
+        let currentSlide = 0;
+        let slideInterval;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = i === index ? '1' : '0';
+            });
+            
+            indicators.forEach((indicator, i) => {
+                indicator.classList.remove('bg-white/70');
+                indicator.classList.add('bg-white/40');
+                if (i === index) {
+                    indicator.classList.remove('bg-white/40');
+                    indicator.classList.add('bg-white/70');
+                }
+            });
+            
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            showSlide((currentSlide + 1) % slides.length);
+        }
+
+        function prevSlide() {
+            showSlide((currentSlide - 1 + slides.length) % slides.length);
+        }
+
+        // 初始化轮播
+        function startSlideshow() {
+            slideInterval = setInterval(nextSlide, 6000); // 6秒切换一次
+        }
+
+        // 事件监听
+        prevBtn.addEventListener('click', () => {
+            clearInterval(slideInterval);
+            prevSlide();
+            startSlideshow();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            clearInterval(slideInterval);
+            nextSlide();
+            startSlideshow();
+        });
+
+        indicators.forEach(indicator => {
+            indicator.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                showSlide(parseInt(indicator.dataset.index));
+                startSlideshow();
+            });
+        });
+
+        // 启动轮播
+        startSlideshow();
+
+        // 返回顶部按钮
+        const backToTopBtn = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('translate-y-20', 'opacity-0');
+                backToTopBtn.classList.add('translate-y-0', 'opacity-100');
+            } else {
+                backToTopBtn.classList.remove('translate-y-0', 'opacity-100');
+                backToTopBtn.classList.add('translate-y-20', 'opacity-0');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 平滑滚动导航
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // 关闭移动端菜单
+                document.getElementById('mobile-menu').classList.add('hidden');
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>    

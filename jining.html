@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>济宁 - 孔孟之乡</title>
+    <meta name="keywords" content="济宁, 山东城市, 孔孟之乡, 运河之都, 儒家文化, 微山湖">
+    <meta name="description" content="探索济宁市的历史文化、自然风光和经济发展特色">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2b2b2b',
+                        secondary: '#4a4a4a',
+                        highlight: '#d9534f',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    spacing: {
+                        '11rem': '11rem',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .nav-item-hover {
+                @apply transition-colors duration-300 hover:text-primary;
+            }
+            .card-hover {
+                @apply transition-shadow duration-300 hover:shadow-xl;
+            }
+            .px-11rem {
+                padding-left: 11rem;
+                padding-right: 11rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-light">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="px-11rem py-3 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-primary">魅力济宁</a>
+            
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-primary font-medium nav-item-hover">首页</a>
+                <a href="#overview" class="text-secondary font-medium nav-item-hover">城市概况</a>
+                <a href="#culture" class="text-secondary font-medium nav-item-hover">文化底蕴</a>
+                <a href="#scenery" class="text-secondary font-medium nav-item-hover">自然风光</a>
+                <a href="#economy" class="text-secondary font-medium nav-item-hover">经济发展</a>
+            </nav>
+            
+            <button id="menu-toggle" class="md:hidden text-primary text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-11rem py-2 flex flex-col space-y-3">
+                <a href="#" class="text-primary font-medium nav-item-hover">首页</a>
+                <a href="#overview" class="text-secondary font-medium nav-item-hover">城市概况</a>
+                <a href="#culture" class="text-secondary font-medium nav-item-hover">文化底蕴</a>
+                <a href="#scenery" class="text-secondary font-medium nav-item-hover">自然风光</a>
+                <a href="#economy" class="text-secondary font-medium nav-item-hover">经济发展</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主Banner -->
+    <section class="relative h-[50vh] min-h-[300px] overflow-hidden">
+        <img src="微信图片_20250518185157.jpg" alt="济宁风光" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+            <div class="text-center px-4">
+                <h1 class="text-[clamp(1.8rem,4vw,3.5rem)] font-bold text-white">济宁</h1>
+                <p class="text-white text-lg mt-2">孔孟之乡 · 运河之都</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要内容区域 -->
+    <main class="px-11rem py-12">
+        <!-- 城市概况 -->
+        <section id="overview" class="mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-6">城市概况</h2>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <p class="text-gray-700 leading-relaxed">
+                    济宁，位于山东省西南部，地处鲁苏豫皖四省交接地带，是中华文明的重要发祥地之一，素有"孔孟之乡、运河之都"的美誉。这里历史悠久，文化底蕴深厚，是儒家文化的发源地，也是《水浒传》中水泊梁山的原型地。
+                </p>
+            </div>
+        </section>
+        
+        <!-- 文化底蕴 -->
+        <section id="culture" class="mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-6">文化底蕴</h2>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                <div class="md:flex">
+                    <div class="md:w-1/2">
+                        <img src="微信图片_20250518185153.jpg" alt="曲阜三孔" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-1/2 p-6 md:p-8">
+                        <h3 class="text-2xl font-bold text-primary mb-4">儒家文化发源地</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            作为儒家文化的发源地，曲阜的"三孔"（孔庙、孔府、孔林）承载着两千多年的文化积淀，每年吸引着全球目光。孔子、孟子等儒家思想的代表人物都诞生于此，其思想影响深远，至今仍是中华文化的重要组成部分。此外，这里还是《水浒传》中水泊梁山的原型地，梁山风景区以武侠文化与自然风光闻名，再现了"大块吃肉，大碗喝酒"的豪情。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 自然风光 -->
+        <section id="scenery" class="mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-6">自然风光</h2>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                <div class="md:flex md:flex-row-reverse">
+                    <div class="md:w-1/2">
+                        <img src="微信图片_20250518185157.jpg" alt="微山湖风光" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-1/2 p-6 md:p-8">
+                        <h3 class="text-2xl font-bold text-primary mb-4">湖光山色</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            京杭大运河纵贯济宁，曾造就"富庶甲齐郡"的漕运重镇，如今留下太白楼、竹竿巷等历史遗迹，诉说着昔日的繁华。微山湖碧波万顷，夏日荷花映日，既是生态胜地，也是铁道游击队红色记忆的承载地。尼山圣境以孔子诞生地为背景，将传统文化与现代科技融合，成为传播国学的新地标。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 经济发展 -->
+        <section id="economy" class="mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-6">经济发展</h2>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                <div class="md:flex">
+                    <div class="md:w-1/2">
+                        <img src="微信图片_20250518184729.jpg" alt="济宁城市建设" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-1/2 p-6 md:p-8">
+                        <h3 class="text-2xl font-bold text-primary mb-4">新旧动能转换</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            经济上，济宁依托煤炭资源奠定工业基础，正加速新旧动能转换，发展高端装备制造、新能源等新兴产业。作为淮海经济区核心城市，高铁网络贯通南北，联动京津冀与长三角。这座"江北水城"兼具历史厚重与现代活力，从古韵悠长的街巷到蓬勃发展的产业园区，从湖光山色的自然画卷到儒风雅韵的文化体验，济宁正以开放包容的姿态，书写着传统与现代交融的崭新篇章。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-primary text-white py-8">
+        <div class="px-11rem text-center">
+            <h3 class="text-lg font-bold mb-3">探索济宁</h3>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-1 md:space-y-0 md:space-x-3 text-sm">
+                <a href="#" class="hover:text-gray-300 transition-colors">关于我们</a>
+                <span>|</span>
+                <a href="#" class="hover:text-gray-300 transition-colors">联系方式</a>
+                <span>|</span>
+                <a href="#" class="hover:text-gray-300 transition-colors">隐私政策</a>
+            </div>
+            <p class="mt-4 text-sm text-gray-400">最终解释权归网站所有</p>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-5 right-5 bg-primary/80 hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-colors opacity-0">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // 返回顶部按钮
+        window.addEventListener('scroll', () => {
+            const backToTopBtn = document.getElementById('back-to-top');
+            backToTopBtn.style.opacity = window.scrollY > 300 ? '1' : '0';
+        });
+
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 平滑滚动导航
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('mobile-menu').classList.add('hidden');
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鄄城 - 孙膑故里</title>
+    <meta name="keywords" content="鄄城, 山东城市, 孙膑故里, 黄河生态, 鲁锦之乡">
+    <meta name="description" content="探索鄄城县的历史文化、自然风光和经济发展特色">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2b2b2b',
+                        secondary: '#4a4a4a',
+                        highlight: '#d9534f',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    spacing: {
+                        '11rem': '11rem',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .nav-item-hover {
+                @apply transition-colors duration-300 hover:text-primary;
+            }
+            .card-hover {
+                @apply transition-shadow duration-300 hover:shadow-xl;
+            }
+            .px-11rem {
+                padding-left: 11rem;
+                padding-right: 11rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-light">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="px-11rem py-3 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-primary">魅力鄄城</a>
+            
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-primary font-medium nav-item-hover">首页</a>
+                <a href="#overview" class="text-secondary font-medium nav-item-hover">城市概况</a>
+                <a href="#history" class="text-secondary font-medium nav-item-hover">历史文化</a>
+                <a href="#nature" class="text-secondary font-medium nav-item-hover">自然风光</a>
+                <a href="#culture" class="text-secondary font-medium nav-item-hover">民俗文化</a>
+                <a href="#industry" class="text-secondary font-medium nav-item-hover">产业发展</a>
+            </nav>
+            
+            <button id="menu-toggle" class="md:hidden text-primary text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-11rem py-2 flex flex-col space-y-3">
+                <a href="#" class="text-primary font-medium nav-item-hover">首页</a>
+                <a href="#overview" class="text-secondary font-medium nav-item-hover">城市概况</a>
+                <a href="#history" class="text-secondary font-medium nav-item-hover">历史文化</a>
+                <a href="#nature" class="text-secondary font-medium nav-item-hover">自然风光</a>
+                <a href="#culture" class="text-secondary font-medium nav-item-hover">民俗文化</a>
+                <a href="#industry" class="text-secondary font-medium nav-item-hover">产业发展</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主Banner -->
+    <section class="relative h-[50vh] min-h-[300px] overflow-hidden">
+        <img src="微信图片_20250518183755.png" alt="鄄城风光" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+            <div class="text-center px-4">
+                <h1 class="text-[clamp(1.8rem,4vw,3.5rem)] font-bold text-white">鄄城</h1>
+                <p class="text-white text-lg mt-2">孙膑故里 · 鲁锦之乡</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要内容区域 -->
+    <main class="px-11rem py-12">
+        <!-- 城市概况 -->
+        <section id="overview" class="mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-6">城市概况</h2>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <p class="text-gray-700 leading-relaxed">
+                    鄄城，这座位于山东省西南部的城市，历史悠久、文化底蕴深厚，自然景观独特，产业发展蓬勃，是一座融合了历史文化、自然风光与现代产业的魅力之城。
+                </p>
+            </div>
+        </section>
+        
+        <!-- 历史文化 -->
+        <section id="history" class="mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-6">历史文化</h2>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                <div class="md:flex">
+                    <div class="md:w-1/2">
+                        <img src="微信图片_20250518183739.jpg" alt="孙膑旅游城" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-1/2 p-6 md:p-8">
+                        <h3 class="text-2xl font-bold text-primary mb-4">历史遗迹</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            从历史维度来看，鄄城堪称中华民族的发祥地之一，历史源远流长，境内留存着诸多珍贵的历史遗迹。尧王墓见证了远古时期的文明，寄托着人们对先古帝王的缅怀与敬仰；孙膑旅游城古朴典雅、庄严肃穆，作为纪念战国时期军事家孙膑的地方，让人仿佛能穿越时空，领略孙膑的智慧与风采。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 自然风光 -->
+        <section id="nature" class="mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-6">自然风光</h2>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                <div class="md:flex md:flex-row-reverse">
+                    <div class="md:w-1/2">
+                        <img src="微信图片_20250518183755.png" alt="黄河湿地" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-1/2 p-6 md:p-8">
+                        <h3 class="text-2xl font-bold text-primary mb-4">黄河生态景观</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            鄄城的自然风貌同样令人赞叹。奔腾的黄河在此流淌，滋养着这片土地，形成了独特的黄河生态景观。河边湿地芦苇摇曳，众多鸟类在此栖息，构成了大自然赋予的生态宝库，尽显生机与静谧之美。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 民俗文化 -->
+        <section id="culture" class="mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-6">民俗文化</h2>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                <div class="md:flex">
+                    <div class="md:w-1/2">
+                        <img src="微信图片_20250518183748.jpg" alt="鲁锦织造" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-1/2 p-6 md:p-8">
+                        <h3 class="text-2xl font-bold text-primary mb-4">民间艺术</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            在文化领域，鄄城有着丰富的民间艺术。鲁锦织造技艺精巧，斑斓的鲁锦蕴含着浓郁的乡土气息；斗鸡、斗羊等传统民俗活动充满活力与激情，展示了这片土地上人们的热情与豪迈。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 产业发展 -->
+        <section id="industry" class="mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-6">产业发展</h2>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                <div class="md:flex md:flex-row-reverse">
+                    <div class="md:w-1/2">
+                        <img src="微信图片_20250518184125.jpg" alt="蔬菜种植" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-1/2 p-6 md:p-8">
+                        <h3 class="text-2xl font-bold text-primary mb-4">绿色蔬菜之乡</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            鄄城享有"中国绿色蔬菜之乡"的美誉，蔬菜种植规模大、品种全、品质优，产品畅销全国，展现出现代产业的蓬勃活力。近年来，鄄城在保持传统农业优势的同时，也在积极发展其他新兴产业，推动经济多元化发展。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-primary text-white py-8">
+        <div class="px-11rem text-center">
+            <h3 class="text-lg font-bold mb-3">探索鄄城</h3>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-1 md:space-y-0 md:space-x-3 text-sm">
+                <a href="#" class="hover:text-gray-300 transition-colors">关于我们</a>
+                <span>|</span>
+                <a href="#" class="hover:text-gray-300 transition-colors">联系方式</a>
+                <span>|</span>
+                <a href="#" class="hover:text-gray-300 transition-colors">隐私政策</a>
+            </div>
+            <p class="mt-4 text-sm text-gray-400">最终解释权归网站所有</p>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-5 right-5 bg-primary/80 hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-colors opacity-0">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // 返回顶部按钮
+        window.addEventListener('scroll', () => {
+            const backToTopBtn = document.getElementById('back-to-top');
+            backToTopBtn.style.opacity = window.scrollY > 300 ? '1' : '0';
+        });
+
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 平滑滚动导航
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('mobile-menu').classList.add('hidden');
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

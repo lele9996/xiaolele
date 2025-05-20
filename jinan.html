@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>济南 - 泉城之都</title>
+    <meta name="keywords" content="济南, 山东城市, 泉城, 趵突泉, 大明湖">
+    <meta name="description" content="探索济南市的泉城文化、自然风光和城市发展特色">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2b2b2b',
+                        secondary: '#4a4a4a',
+                        highlight: '#d9534f',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    spacing: {
+                        '11rem': '11rem',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .nav-item-hover {
+                @apply transition-colors duration-300 hover:text-primary;
+            }
+            .card-hover {
+                @apply transition-shadow duration-300 hover:shadow-xl;
+            }
+            .px-11rem {
+                padding-left: 11rem;
+                padding-right: 11rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-light">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="px-11rem py-3 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-primary">泉城济南</a>
+            
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-primary font-medium nav-item-hover">首页</a>
+                <a href="#overview" class="text-secondary font-medium nav-item-hover">城市概况</a>
+                <a href="#springs" class="text-secondary font-medium nav-item-hover">泉城文化</a>
+                <a href="#lake" class="text-secondary font-medium nav-item-hover">大明湖</a>
+                <a href="#modern" class="text-secondary font-medium nav-item-hover">现代风采</a>
+            </nav>
+            
+            <button id="menu-toggle" class="md:hidden text-primary text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-11rem py-2 flex flex-col space-y-3">
+                <a href="#" class="text-primary font-medium nav-item-hover">首页</a>
+                <a href="#overview" class="text-secondary font-medium nav-item-hover">城市概况</a>
+                <a href="#springs" class="text-secondary font-medium nav-item-hover">泉城文化</a>
+                <a href="#lake" class="text-secondary font-medium nav-item-hover">大明湖</a>
+                <a href="#modern" class="text-secondary font-medium nav-item-hover">现代风采</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主Banner -->
+    <section class="relative h-[50vh] min-h-[300px] overflow-hidden">
+        <img src="微信图片_20250518184359.jpg" alt="济南风光" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+            <div class="text-center px-4">
+                <h1 class="text-[clamp(1.8rem,4vw,3.5rem)] font-bold text-white">济南</h1>
+                <p class="text-white text-lg mt-2">泉城之都 · 魅力之城</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要内容区域 -->
+    <main class="px-11rem py-12">
+        <!-- 城市概况 -->
+        <section id="overview" class="mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-6">城市概况</h2>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <p class="text-gray-700 leading-relaxed">
+                    泉城济南，是一座古韵与现代交织的魅力之都。它既有千年沉淀的泉文化与历史古迹，又焕发着现代化都市的蓬勃生机，以独特的韵味吸引着八方来客。
+                </p>
+            </div>
+        </section>
+        
+        <!-- 泉城文化 -->
+        <section id="springs" class="mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-6">泉城文化</h2>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                <div class="md:flex">
+                    <div class="md:w-1/2">
+                        <img src="微信图片_20250518184411.png" alt="趵突泉" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-1/2 p-6 md:p-8">
+                        <h3 class="text-2xl font-bold text-primary mb-4">天下第一泉</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            济南"泉城"之名享誉四海，城内星罗棋布的泉水是这座城市的灵魂。趵突泉三股清泉喷涌而出，水花翻涌如轮，灵动中尽显生机；黑虎泉泉水自石雕虎头奔涌而出，水声轰鸣如虎啸，气势雄浑。汩汩清泉汇聚成河，滋养着城市的每一寸土地，也孕育出独具特色的泉文化，让济南流淌着悠悠古韵。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 大明湖 -->
+        <section id="lake" class="mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-6">大明湖</h2>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                <div class="md:flex md:flex-row-reverse">
+                    <div class="md:w-1/2">
+                        <img src="微信图片_20250518184405.jpg" alt="大明湖" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-1/2 p-6 md:p-8">
+                        <h3 class="text-2xl font-bold text-primary mb-4">湖光山色</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            大明湖宛如镶嵌在济南的一颗明珠，尽显自然风光与人文景致的交融之美。湖面波光潋滟，四周绿树环绕，古朴典雅的亭台楼阁错落有致。晴天时，蓝天白云倒映在澄澈湖水中，相映成趣；雨天时，湖面烟雨朦胧，恰似一幅徐徐展开的水墨画卷，诉说着这座城市的温婉与诗意。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 现代风采 -->
+        <section id="modern" class="mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-6">现代风采</h2>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                <div class="md:flex">
+                    <div class="md:w-1/2">
+                        <img src="微信图片_20250518184359.jpg" alt="济南CBD" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-1/2 p-6 md:p-8">
+                        <h3 class="text-2xl font-bold text-primary mb-4">都市新貌</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            踏入现代篇章，济南的都市风采同样令人眼前一亮。中央商务区高楼鳞次栉比，山东大厦、绿地中心等标志性建筑拔地而起，勾勒出雄伟壮观的城市天际线。每当夜幕降临，泉城广场的音乐喷泉随着旋律舞动，五彩灯光与飞溅的水花交织，繁华夜景与白天的古韵形成鲜明对比，展现出济南与时俱进的蓬勃活力。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-primary text-white py-8">
+        <div class="px-11rem text-center">
+            <h3 class="text-lg font-bold mb-3">探索济南</h3>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-1 md:space-y-0 md:space-x-3 text-sm">
+                <a href="#" class="hover:text-gray-300 transition-colors">关于我们</a>
+                <span>|</span>
+                <a href="#" class="hover:text-gray-300 transition-colors">联系方式</a>
+                <span>|</span>
+                <a href="#" class="hover:text-gray-300 transition-colors">隐私政策</a>
+            </div>
+            <p class="mt-4 text-sm text-gray-400">最终解释权归网站所有</p>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-5 right-5 bg-primary/80 hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-colors opacity-0">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // 返回顶部按钮
+        window.addEventListener('scroll', () => {
+            const backToTopBtn = document.getElementById('back-to-top');
+            backToTopBtn.style.opacity = window.scrollY > 300 ? '1' : '0';
+        });
+
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 平滑滚动导航
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('mobile-menu').classList.add('hidden');
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>临沂 - 魅力山东</title>
+    <meta name="keywords" content="临沂, 山东城市, 历史文化, 自然风光, 商贸物流">
+    <meta name="description" content="探索临沂市的历史文化、自然风光和商贸物流特色">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2b2b2b',
+                        secondary: '#4a4a4a',
+                        highlight: '#d9534f',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .nav-item-hover {
+                @apply transition-colors duration-300 hover:text-primary;
+            }
+            .card-hover {
+                @apply transition-shadow duration-300 hover:shadow-xl;
+            }
+            .px-11rem {
+                padding-left: 11rem;
+                padding-right: 11rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-light">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="px-11rem py-3 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-primary">我们的家乡</a>
+            
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-primary font-medium nav-item-hover">首页</a>
+                <a href="#overview" class="text-secondary font-medium nav-item-hover">城市概况</a>
+                <a href="#history" class="text-secondary font-medium nav-item-hover">历史文化</a>
+                <a href="#scenery" class="text-secondary font-medium nav-item-hover">自然风光</a>
+                <a href="#commerce" class="text-secondary font-medium nav-item-hover">商贸物流</a>
+            </nav>
+            
+            <button id="menu-toggle" class="md:hidden text-primary text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-11rem py-2 flex flex-col space-y-3">
+                <a href="#" class="text-primary font-medium nav-item-hover">首页</a>
+                <a href="#overview" class="text-secondary font-medium nav-item-hover">城市概况</a>
+                <a href="#history" class="text-secondary font-medium nav-item-hover">历史文化</a>
+                <a href="#scenery" class="text-secondary font-medium nav-item-hover">自然风光</a>
+                <a href="#commerce" class="text-secondary font-medium nav-item-hover">商贸物流</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主Banner -->
+    <section class="relative h-[50vh] min-h-[300px] overflow-hidden">
+        <img src="微信图片_20250518180035.jpg" alt="临沂风光" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+            <div class="text-center px-4">
+                <h1 class="text-[clamp(1.8rem,4vw,3.5rem)] font-bold text-white">临沂</h1>
+                <p class="text-white text-lg mt-2">中国市场名城 · 物流之都</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要内容区域 -->
+    <main class="px-11rem py-12">
+        <!-- 城市概况 -->
+        <section id="overview" class="mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-6">城市概况</h2>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <p class="text-gray-700 leading-relaxed">
+                    在山东东南部，有一座魅力非凡的城市——临沂。它面积1.72万平方公里，户籍人口1200万 ，是山东面积最大、人口最多的市，享有"中国市场名城""中国物流之都"等美誉。
+                </p>
+            </div>
+        </section>
+        
+        <!-- 历史文化 -->
+        <section id="history" class="mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-6">历史文化</h2>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                <div class="md:flex">
+                    <div class="md:w-1/2">
+                        <img src="微信图片_20250518175057.jpg" alt="临沂历史文化" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-1/2 p-6 md:p-8">
+                        <h3 class="text-2xl font-bold text-primary mb-4">历史文化</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            临沂历史底蕴深厚，建城史近3000年。这里是《孙子兵法》《孙膑兵法》竹简的出土地，思想家荀子、宗圣曾子、智圣诸葛亮、书圣王羲之等诸多名人都在此留下足迹，孔子72贤徒有13人、24孝中有7孝诞生于此。作为全国著名的革命老区，刘少奇、陈毅等老一辈革命家曾在此战斗，铸就了伟大的沂蒙精神。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 自然风光 -->
+        <section id="scenery" class="mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-6">自然风光</h2>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                <div class="md:flex md:flex-row-reverse">
+                    <div class="md:w-1/2">
+                        <img src="微信图片_20250518175051.jpg" alt="临沂自然风光" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-1/2 p-6 md:p-8">
+                        <h3 class="text-2xl font-bold text-primary mb-4">自然风光</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            自然与人文景观丰富，是临沂的又一特色。蒙山、沂水萤火虫水洞·地下大峡谷是国家5A级景区，莒南天然卧佛、沂河小埠东橡胶坝令人称奇，银雀山汉墓竹简博物馆、王羲之故居等名胜古迹闻名遐迩。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 商贸物流 -->
+        <section id="commerce" class="mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-6">商贸物流</h2>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                <div class="md:flex">
+                    <div class="md:w-1/2">
+                        <img src="微信图片_20250518175009.jpg" alt="临沂商贸物流" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-1/2 p-6 md:p-8">
+                        <h3 class="text-2xl font-bold text-primary mb-4">商贸物流</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            商贸发达，也是临沂的一大亮点。线下拥有131个批发市场，商品种类超过600万种；线上建有56处电商园区，是北方最大的短视频直播电商基地。物流体系更是强大，拥有43处园区、近3000条配载线路，形成"南有义乌、北有临沂"的格局。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-primary text-white py-8">
+        <div class="px-11rem text-center">
+            <h3 class="text-lg font-bold mb-3">探索临沂</h3>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-1 md:space-y-0 md:space-x-3 text-sm">
+                <a href="#" class="hover:text-gray-300 transition-colors">关于我们</a>
+                <span>|</span>
+                <a href="#" class="hover:text-gray-300 transition-colors">联系方式</a>
+                <span>|</span>
+                <a href="#" class="hover:text-gray-300 transition-colors">隐私政策</a>
+            </div>
+            <p class="mt-4 text-sm text-gray-400">最终解释权归网站所有</p>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-5 right-5 bg-primary/80 hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-colors opacity-0">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // 返回顶部按钮
+        window.addEventListener('scroll', () => {
+            const backToTopBtn = document.getElementById('back-to-top');
+            backToTopBtn.style.opacity = window.scrollY > 300 ? '1' : '0';
+        });
+
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 平滑滚动导航
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('mobile-menu').classList.add('hidden');
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
